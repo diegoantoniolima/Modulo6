@@ -1,0 +1,53 @@
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) throws Exception {
+		System.out.println("--- DIÁRIO DE CLASSE ---");
+
+		Scanner scanner = new Scanner(System.in);
+		
+		String[] nomeAlunos = new String[5];
+		String[] datas = new String[5];
+		String[][] diario = new String[4][4];
+		
+		for (int i = 0; i < 5; i++) {
+			System.out.print("Digite o nome " + i + ": ");
+			String nome = scanner.nextLine();
+			nomeAlunos[i] = nome;
+			
+			System.out.println(i);
+			
+			if (i==5) 
+				System.out.println("-------------------");
+		}
+		
+		for (int i = 0; i < 5; i++) {
+			System.out.print("Digite a data " + i + ": ");
+			String data = scanner.nextLine();
+			datas[i] = data;
+			
+			if (i==5) 
+				System.out.println("-------------------");
+		}
+				
+		for (int i = 0; i < 4; i++) {
+			System.out.println("Realizando a chamada do dia "+datas[i]);
+			for (int c = 0; c < 4; c++) {			
+				System.out.println("O aluno "+nomeAlunos[c]+" está presente? ");
+				String registro = scanner.nextLine();
+				diario[i][c] = registro;
+			}
+
+		}
+
+		for (int i = 0; i < diario.length; i++) {
+			for (int c = 0; c < diario[i].length; c++) {
+				System.out.print(diario[i][c] + " ");
+			}
+			System.out.println("");
+		}
+	}
+}
